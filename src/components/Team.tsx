@@ -6,8 +6,8 @@ const teamMembers = [
     id: 1,
     name: "Dra. Rita Alicia Andracchi",
     role: "Neurologa",
-    // USANDO LA IMAGEN LOCAL QUE PROPORCIONASTE
-    image: "/images/dra-andracchi.png", 
+    // NUEVA SOLUCIÓN: Usamos la URL que siempre funcionó (la que tenía Melina).
+    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=RitaV3&skinColor=f3d4cf&hairColor=e6c67b&top=straight01&accessories=prescription02&mouth=smile&clothing=blazerAndShirt&eyes=default", 
     description: "Médica de cabecera de PAMI · Neuróloga por obra social (consultar).",
     experience: "15+ años",
     patients: "5,000+",
@@ -19,20 +19,20 @@ const teamMembers = [
     id: 2,
     name: "Dr. Victor Angel Delgado",
     role: "Medico Clinico",
-    image: "https://avatar.iran.liara.run/public/15", // Esta ya funcionaba bien
+    image: "https://avatar.iran.liara.run/public/15", // Esta sigue funcionando bien
     description: "Médico de cabecera de PAMI.",
     experience: "12+ años",
     patients: "8,000+",
     specialties: ["Diagnóstico y tratamiento de enfermedades comunes con un enfoque integral y personalizado."],
-    social: { facebook: "#", twitter: "#", instagram: "#" },
+    social: { facebook: "#", "twitter": "#", instagram: "#" },
     icon: <HeartPulse className="w-5 h-5" />
   },
   {
     id: 3,
     name: "Lic. Melina Mater",
     role: "Psicopedagoga",
-    // Avatar de Melina (el que funcionaba bien antes para Rita)
-    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=RitaV3&skinColor=f3d4cf&hairColor=e6c67b&top=straight01&accessories=prescription02&mouth=smile&clothing=blazerAndShirt&eyes=default",
+    // NUEVA URL para Melina: Similar a la anterior, pero con un seed distinto (Kiki) para diferenciarlas.
+    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=MelinaFinal&skinColor=f3d4cf&hairColor=fdd835&top=shaggyMullet&accessories=prescription01&mouth=smile&clothing=blazerAndShirt&eyes=default",
     description: "Experta profesional de la psicopedagogía, especializada de la educación que evalúa, diagnostica e interviene en las dificultades de aprendizaje.",
     experience: "10+ años",
     patients: "6,500+",

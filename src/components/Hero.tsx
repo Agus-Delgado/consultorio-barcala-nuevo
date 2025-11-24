@@ -86,8 +86,8 @@ const Hero = () => {
           >
             {[
               { number: "15+", label: "Años de experiencia" },
-              { number: "10k+", label: "Pacientes atendidos" },
-              { number: "50+", label: "Profesionales" },
+              { number: "7k+", label: "Pacientes atendidos" },
+              { number: "3", label: "Profesionales" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.number}</div>

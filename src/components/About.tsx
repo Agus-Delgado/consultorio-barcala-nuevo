@@ -63,7 +63,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            En el consultorio barcala combinamos tecnología de punta con un trato humano excepcional para ofrecerte la mejor atención médica integral.
+            En el Consultorio Barcala combinamos tecnología de punta con un trato humano excepcional para ofrecerte la mejor atención médica integral.
           </motion.p>
         </div>
 
@@ -118,7 +118,7 @@ const About = () => {
               Nuestro compromiso con tu <span className="text-blue-600">bienestar integral</span>
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed">
-              En el consultorio barcala nos dedicamos a ofrecer atención médica de excelencia, combinando los últimos avances tecnológicos con un trato humano y cercano. Nuestro equipo de profesionales altamente capacitados está comprometido con tu salud y bienestar.
+              En el consultorio Barcala nos dedicamos a ofrecer atención médica de excelencia, combinando los últimos avances tecnológicos con un trato humano y cercano. Nuestro equipo de profesionales altamente capacitados está comprometido con tu salud y bienestar.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
