@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-// IMPORTANTE: Agregamos 'Brain' y 'Baby' a los imports
 import { Stethoscope, HeartPulse, Brain, Baby, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const teamMembers = [
@@ -7,39 +6,38 @@ const teamMembers = [
     id: 1,
     name: "Dra. Rita Alicia Andracchi",
     role: "Neurologa",
-    image: "https://avatar.iran.liara.run/public/64", 
+    // USANDO LA IMAGEN LOCAL QUE PROPORCIONASTE
+    image: "/images/dra-andracchi.png", 
     description: "Médica de cabecera de PAMI · Neuróloga por obra social (consultar).",
     experience: "15+ años",
     patients: "5,000+",
     specialties: ["Evaluación, diagnóstico y seguimiento de trastornos del sistema nervioso: cefaleas, epilepsia, ACV, neuropatías y trastornos del sueño."],
     social: { facebook: "#", twitter: "#", instagram: "#" },
-    // CAMBIO AQUI: Icono de Cerebro
     icon: <Brain className="w-5 h-5" />
   },
   {
     id: 2,
     name: "Dr. Victor Angel Delgado",
     role: "Medico Clinico",
-    image: "https://avatar.iran.liara.run/public/15",
+    image: "https://avatar.iran.liara.run/public/15", // Esta ya funcionaba bien
     description: "Médico de cabecera de PAMI.",
     experience: "12+ años",
     patients: "8,000+",
     specialties: ["Diagnóstico y tratamiento de enfermedades comunes con un enfoque integral y personalizado."],
     social: { facebook: "#", twitter: "#", instagram: "#" },
-    // CAMBIO AQUI: HeartPulse representa la salud física/cuerpo (Clínica)
     icon: <HeartPulse className="w-5 h-5" />
   },
   {
     id: 3,
-    name: "Dra. Melina Mater",
-    role: "Psicopedagoga ",
-    image: "https://avatar.iran.liara.run/public/85",
+    name: "Lic. Melina Mater",
+    role: "Psicopedagoga",
+    // Avatar de Melina (el que funcionaba bien antes para Rita)
+    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=RitaV3&skinColor=f3d4cf&hairColor=e6c67b&top=straight01&accessories=prescription02&mouth=smile&clothing=blazerAndShirt&eyes=default",
     description: "Experta profesional de la psicopedagogía, especializada de la educación que evalúa, diagnostica e interviene en las dificultades de aprendizaje.",
     experience: "10+ años",
     patients: "6,500+",
     specialties: ["Evaluación, orientación y acompañamiento del aprendizaje en niños, adolescentes y adultos."],
     social: { facebook: "#", twitter: "#", instagram: "#" },
-    // CAMBIO AQUI: Icono de Bebé/Niño
     icon: <Baby className="w-5 h-5" />
   }
 ];
@@ -54,7 +52,7 @@ const Team = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
-        {/* Encabezado de la sección */}
+        {/* Encabezado */}
         <div className="text-center mb-20">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -102,22 +100,22 @@ const Team = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 flex flex-col items-center border border-gray-100"
             >
-              {/* Avatar Circular */}
+              {/* Avatar Circular con Fondo Blanco Puro */}
               <div className="relative mb-6">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-50 shadow-md">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-50 shadow-md bg-white">
                     <img
                         src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover"
+                        loading="eager"
                     />
                 </div>
-                {/* Icono pequeño flotante (rol) */}
+                {/* Icono pequeño flotante */}
                 <div className="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full border-2 border-white shadow-sm">
                     {member.icon}
                 </div>
               </div>
 
-              {/* Información del Doctor */}
               <div className="text-center w-full">
                 <h3 className="text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-blue-600 font-medium mb-4">{member.role}</p>
@@ -126,7 +124,6 @@ const Team = () => {
                   {member.description}
                 </p>
 
-                {/* Especialidades (Badges) */}
                 <div className="flex flex-wrap justify-center gap-2 mb-6">
                   {member.specialties.map((specialty, i) => (
                     <span key={i} className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full border border-gray-200">
@@ -135,7 +132,6 @@ const Team = () => {
                   ))}
                 </div>
 
-                {/* Redes Sociales (Opcional, decorativo) */}
                 <div className="flex justify-center space-x-4 border-t border-gray-100 pt-6 mt-auto">
                     <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors"><Facebook className="w-5 h-5"/></a>
                     <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors"><Twitter className="w-5 h-5"/></a>
