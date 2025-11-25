@@ -1,37 +1,34 @@
-import React, { useState } from 'react'; // Importamos useState para el estado del modal
+import { useState } from 'react'; // <--- CORRECCIÓN 1: Solo importamos { useState } de react.
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Team from '../components/Team';
 import Contact from '../components/Contact';
 import { motion } from 'framer-motion';
 
-// --- DEFINICIÓN DE INTERFACE PARA RESOLVER EL ERROR TS(7031) ---
+// --- DEFINICIÓN DE INTERFACE ---
 interface ZoomModalProps {
     isOpen: boolean;
-    onClose: () => void; // Función que no devuelve nada
+    onClose: () => void;
     imageSrc: string;
 }
 
-// --- COMPONENTE MODAL DE ZOOM (Agregado para la imagen) ---
-// La modal aparece al hacer clic en la imagen del QR.
-const ZoomModal = ({ isOpen, onClose, imageSrc }: ZoomModalProps) => { // APLICAMOS EL TIPO AQUÍ
+// --- COMPONENTE MODAL DE ZOOM ---
+const ZoomModal = ({ isOpen, onClose, imageSrc }: ZoomModalProps) => { 
     if (!isOpen) return null;
 
     return (
         // Overlay de fondo oscuro
         <div 
             className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4 cursor-pointer"
-            onClick={onClose} // Cerrar al hacer clic fuera
+            onClick={onClose} 
         >
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3 }}
-                // CLASES MODIFICADAS: Usamos max-w-xl (más ancho) y max-h-[90vh] para limitar la altura a la vista,
-                // y overflow-y-auto para que se pueda hacer scroll si la imagen es muy larga.
-                className="bg-white p-2 rounded-xl shadow-2xl max-w-xl w-full relative max-h-[90vh] overflow-y-auto" 
-                onClick={e => e.stopPropagation()} // Evita cerrar al hacer clic en la imagen
+                className="bg-white p-2 rounded-xl shadow-2xl max-w-2xl w-full relative max-h-[90vh] overflow-y-auto" 
+                onClick={e => e.stopPropagation()} 
             >
                 {/* Botón de cerrar */}
                 <button
@@ -42,11 +39,10 @@ const ZoomModal = ({ isOpen, onClose, imageSrc }: ZoomModalProps) => { // APLICA
                     &times;
                 </button>
                 
-                {/* Imagen ampliada - Aseguramos object-contain para que no se recorte */}
+                {/* Imagen ampliada */}
                 <img 
                     src={imageSrc} 
                     alt="Información detallada del Taller (Zoom)" 
-                    // Aseguramos que la imagen no se salga de su contenedor y se ajuste
                     className="w-full h-auto rounded-lg object-contain block" 
                 />
             </motion.div>
@@ -55,7 +51,7 @@ const ZoomModal = ({ isOpen, onClose, imageSrc }: ZoomModalProps) => { // APLICA
 };
 
 
-// --- SECCIÓN DEL TALLER INTEGRADA (DEFINIDA LOCALMENTE) ---
+// --- SECCIÓN DEL TALLER INTEGRADA ---
 const TallerVidaSaludable = () => {
     // Estado para controlar la apertura del modal de zoom
     const [isModalOpen, setIsModalOpen] = useState(false);
