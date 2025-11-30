@@ -88,7 +88,7 @@ const Contact = () => {
                 </div>
               </motion.div>
 
-              {/* Correo Electrónico (MODIFICADO PARA QUE QUEDE PROLIJO) */}
+              {/* Correo Electrónico */}
               <motion.div 
                 className="flex items-start p-6 rounded-2xl bg-blue-50/50 hover:bg-blue-50 transition-all duration-300 group hover:shadow-md border border-transparent hover:border-blue-100"
                 whileHover={{ y: -5 }}
@@ -106,12 +106,20 @@ const Contact = () => {
                     </a>
                   </div>
 
-                  <div>
+                  <div className="mb-3">
                     <span className="block text-sm font-semibold text-gray-700">Dr. Delgado:</span>
                     <a href="mailto:vconsultorio69@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors block break-words text-sm sm:text-base">
                       vconsultorio69@gmail.com
                     </a>
                   </div>
+
+                  <div>
+                    <span className="block text-sm font-semibold text-gray-700">Lic. Melina Mater:</span>
+                    <a href="mailto:pspmatermelina@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors block break-words text-sm sm:text-base">
+                      pspmatermelina@gmail.com
+                    </a>
+                  </div>
+
                 </div>
               </motion.div>
 
@@ -136,7 +144,7 @@ const Contact = () => {
             </div>
           </motion.div>
           
-          {/* Mapa LOCALIZADO EN BARCALA 550 */}
+          {/* Mapa */}
           <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
             <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-300"></div>
             <div className="p-1 bg-white">
